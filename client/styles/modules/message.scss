@@ -1,0 +1,265 @@
+/* message */
+.message {
+    padding: 10px 20px 10px 10px;
+    border-top: 1px solid #f2f2f2;
+}
+.message.without_border {
+    border: none;
+}
+.new_messages {
+    padding: 15px 20px 15px 25px;
+    border-top: 1px solid #f2f2f2;
+    font:600 16px 'Open Sans', sans-serif;
+    color: #007de3;
+}
+.message_service {
+    padding: 10px 20px 10px 10px;
+}
+.message.msg_preloader {
+    position: absolute;
+    width: 100%;
+    height: 40px;
+    z-index: 10;
+    border: none;
+}
+.message_service:last-of-type .btn_request_again {
+    display: inline-block;
+}
+article.message[data-status="typing"] {
+    height: 100%;
+    line-height: 100%;
+    padding: 9px;
+    border: none;
+}
+article.message[data-status="typing"] > div {
+    display: inline-block;
+    margin-left: 7px;
+    color: #B2B2B2;
+}
+.message_typing {
+    max-width: 450px;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+}
+.message-container-wrap {
+    width: 100%;
+}
+.message-container {
+    width: 100%;
+    margin-top: 10px;
+    font-size: 16px;
+    line-height: 20px;
+}
+.message-container:first-child {
+    margin-top: 0;
+}
+.message-content {
+    padding-left: 15px;
+    width: 450px;
+    color: #333;
+    word-wrap: break-word;
+}
+.message_attach .message-content {
+    width: 450px;
+}
+.message-author {
+    margin-bottom: 10px;
+}
+.message_service .message-author {
+    margin-bottom: 0;
+    line-height: 30px;
+}
+.message_attach_row .message-author {
+    line-height: 37px;
+}
+.message-error {
+    color: #c03d3d;
+}
+.message-body {
+    position: relative;
+    white-space: pre-wrap;
+    width: 100%;
+}
+.message-body p {
+    margin-bottom: 10px;
+}
+.message-body p:last-of-type {
+    margin-bottom: 0;
+}
+.message-body a {
+    color: #0d70b3;
+}
+.message-content.indent {
+    padding-left: 60px;
+    width: 495px;
+}
+.message-info {
+    width: 140px;
+    height: 24px;
+    text-align: right;
+}
+.message-time {
+    display: inline-block;
+    vertical-align: top;
+    width: 115px;
+    font-size: 13px;
+    line-height: 24px;
+    text-align: right;
+    color: #999;
+}
+.message-time a {
+    font-size: 14px;
+    color: #0d70b3;
+}
+.message_attach_row .message-time {
+    line-height: 28px;
+}
+.message-status {
+    display: inline-block;
+    vertical-align: top;
+    width: 115px;
+    font-size: 13px;
+    line-height: 24px;
+    text-align: right;
+    color: #999;
+}
+.info_indent,
+.message-geo {
+    position: relative;
+    display: inline-block;
+    vertical-align: top;
+    width: 24px;
+    height: 28px;
+    text-align: right;
+}
+.message-geo.with-geo {
+    background: url('../images/ic_location_sm.svg') 50% 25% no-repeat;
+    cursor: pointer;
+}
+.message-avatar.request-button_pending {
+    margin: 5px 5px 0 15px;
+}
+.message-avatar.request-button_cancel {
+    margin: 6px 5px 0 15px;
+}
+.message-avatar.request-button_ok {
+    margin: 3px 5px 0 15px;
+}
+/* preview */
+.preview {
+    width: 380px;
+    height: 214px;
+    float: left;
+    cursor: pointer;
+    overflow: hidden;
+    position: relative;
+}
+.preview:hover {
+    opacity: 0.6;
+}
+.preview-video {
+    position: relative;
+    width: 180px;
+    height: 125px;
+    background: #333;
+}
+.preview-video:before {
+    content: "\e001";
+    position: absolute;
+    margin: auto auto auto 48%;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    left: 0;
+    width: 0;
+    height: 0;
+    border-top: 20px solid transparent;
+    border-bottom: 20px solid transparent;
+    border-left: 20px solid #ccc;
+}
+.preview-photo img {
+    max-width: 380px;
+    max-height: 214px;
+    transform: translate(0, -50%);
+    position: absolute;
+    top: 50%;
+}
+.attachment {
+    position: absolute;
+    top: 7px;
+    right: 15px;
+    width: 14px;
+    height: 38px;
+    opacity: 0;
+    visibility: hidden;
+}
+.scaleAvatar {
+    cursor: pointer;
+}
+.scaleAvatar:hover {
+    opacity: .6;
+}
+.changePic {
+    color: #0d70b3;
+    cursor: pointer;
+    margin-left: 20px;
+    width: 120px;
+    text-align: right;
+}
+.changePic:hover {
+    opacity: none;
+}
+// OpenGraph information
+.message-body .og_block {
+    color: #000;
+    display: block;
+    width: 100%;
+    height: 80px;
+    border-left: 3px solid #1cba48;
+    margin-top: 5px;
+}
+.message-body .og_block:hover {
+    opacity: 1;
+    background-color: #fdfdfd;
+}
+.og_info {
+    height: 100%;
+    width: 80%;
+    padding-left: 10px;
+    padding-right: 5px;
+    display: inline-block;
+    vertical-align: top;
+}
+.og_title {
+    margin-top: 3px;
+    height: 20px;
+    width: 100%;
+    display: block;
+    line-height: 20px;
+    font-size: 14px;
+    overflow: hidden;
+    white-space: nowrap;
+    text-overflow: ellipsis;
+}
+.og_description {
+    margin-top: 2px;
+    max-height: 55px;
+    width: 100%;
+    display: block;
+    font-size: 13px;
+    line-height: 18px;
+    font-weight: 500;
+    overflow: hidden;
+    white-space: pre-wrap;
+    text-overflow: ellipsis;
+}
+.og_image {
+    max-width: 20%;
+    display: inline-block;
+    vertical-align: top;
+}
+.og_image > img {
+    max-height: 80px;
+    max-width: 100%;
+}

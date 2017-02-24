@@ -4,9 +4,9 @@ define(function() {
     var QMCONFIG = {
 
         qbAccount: {
-            appId: 36125,
-            authKey: 'gOGVNO4L9cBwkPE',
-            authSecret: 'JdqsMHCjHVYkVxV'
+            appId: Number('@@appId'),
+            authKey: '@@authKey',
+            authSecret: '@@authSecret'
         },
 
         fbAccount: {
@@ -14,7 +14,7 @@ define(function() {
             scope: 'email,user_friends'
         },
 
-        debug: true,
+        debug: Number('@@debugQM'),
 
         notification: {
             timeout: 7
@@ -36,8 +36,8 @@ define(function() {
         maxVideoSize: 100,
 
         patterns: {
-            name: '.{3,50}',
-            password: '.{8,40}'
+            name: ".{3,50}",
+            password: ".{8,40}"
         },
 
         errors: {
@@ -69,7 +69,7 @@ define(function() {
                 active: 2
             },
             debug: {
-                mode: 1,
+                mode: Number('@@debugQB'),
                 file: null
             },
             webrtc: {
@@ -81,4 +81,5 @@ define(function() {
     };
 
     return QMCONFIG;
+
 });
