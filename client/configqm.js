@@ -4,9 +4,9 @@ define(function() {
     var QMCONFIG = {
 
         qbAccount: {
-            appId: 36125,
-            authKey: 'gOGVNO4L9cBwkPE',
-            authSecret: 'JdqsMHCjHVYkVxV'
+            appId: 51994,
+            authKey: 'WnF8-gpP7CHRy94',
+            authSecret: 'BcPszAStfMYqCdV'
         },
 
         fbAccount: {
