@@ -1,5 +1,5 @@
 QB.init(QBApp.appId, QBApp.authKey, QBApp.authSecret, true);
-
+console.log('Session opening ');
 // Create session
 	var filter = {sort_asc: 'created_at'};
 QB.createSession(QBUser, function(err, result){

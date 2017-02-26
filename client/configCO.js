@@ -1,3 +1,5 @@
+var QB = require('quickblox');
+
 var QBApp = {
   appId: 51994,
   authKey: 'WnF8-gpP7CHRy94',
