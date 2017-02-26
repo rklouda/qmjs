@@ -5,8 +5,8 @@ var QBApp = {
 };
 
 var QBUser = {
-	login: "rgklouda@comcast.net",   
-	password: "Klowns821" 
+	login: "rob@gmail.com",   
+	password: "12345678" 
 };
 
 
