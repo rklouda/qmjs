@@ -27,7 +27,7 @@ QB.createSession(QBUser, function(err, result){
 });
 
 function getAllPosts() {
-	QB.data.list("Blog", filter, function(err, result){
+	QB.data.list("Application", filter, function(err, result){
 		if (err) { 
 			console.log(err);
 		} else {
@@ -35,14 +35,14 @@ function getAllPosts() {
 
 			for (var i=0; i < result.items.length; i++) {
 				var item = result.items[result.items.length-i-1];
-				showPost(item.title, item.body, false);
+				showPost(item.name, item.description, false);
 			}	
 		}
 	});
 }
 
 function addNewPost(textTitle, textBody) {
-	QB.data.create("Blog", {title: textTitle, body: textBody}, function(err, res){
+	QB.data.create("Application", {name: textTitle, description: textBody}, function(err, res){
 		if (err) {
 			console.log(err);
 		} else {
@@ -53,7 +53,7 @@ function addNewPost(textTitle, textBody) {
 			$('#title_post').val('');
 			$('#body_post').val('');
 
-			QB.data.list("Blog", filter, function(err, result){
+			QB.data.list("Application", filter, function(err, result){
 				if (err) { 
 					console.log(err);
 				} else {
