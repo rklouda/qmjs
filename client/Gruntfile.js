@@ -12,7 +12,7 @@ module.exports = function(grunt) {
 
     // configurable paths
     var yeomanConfig = {
-        app: 'app',
+        app: 'client',
         dist: 'dist',
         originalScriptTag: '<script src="scripts/main.js"></script>',
         tmpScriptTag: '<script src="scripts/.build.js"></script>'
