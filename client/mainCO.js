@@ -1,58 +1,12 @@
 QB.init(QBApp.appId, QBApp.authKey, QBApp.authSecret);
-
-$(document).ready(function() {
-
   // First of all create a session and obtain a session token
   // Then you will be able to run requests to Users
   //
   QB.createSession(function(err,result){
     console.log('Session create callback', err, result);
   });
-	getAllPosts();
-  // Init Twitter Digits
-  //
-
-  var digitsKey = 'uH2aUsd3BP0qLpTezVnqXyZAk';
-
-  $('#digits-sdk').load(function () {
-    Digits.init({ consumerKey: digitsKey })
-      .done(function() {
-        console.log('Digits initialized.');
-      })
-      .fail(function(error) {
-        console.log('Digits failed to initialize: ' + JSON.stringify(error));
-      });
-
-    // Login user twitter digits
-    $('#sign_in_twitter_digits').on('click', function() {
-      Digits.logIn()
-        .done(function(loginResponse) {
-
-          var params = {
-            provider: 'twitter_digits',
-            twitter_digits: loginResponse.oauth_echo_headers
-          };
-
-          // login with twitter_digits params
-          QB.login(params, function(err, user){
-            if (user) {
-              $('#output_place').val(JSON.stringify(user));
-            }else{
-              $('#output_place').val(JSON.stringify(err));
-            }
-          });
-
-        })
-        .fail(function(error) {
-          console.log('Digits failed to login: ' + JSON.stringify(error));
-        });
-    });
-  });
 
 
-	
-	
-QB.init(QBApp.appId, QBApp.authKey, QBApp.authSecret);
 console.log('Session opening ');
 // Create session
 	var filter = {sort_asc: 'created_at'};
@@ -79,6 +33,7 @@ QB.createSession(QBUser, function(err, result){
 		});
 	}
 });
+
 
 function getAllPosts() {
 	QB.data.list("Application", filter, function(err, result){
