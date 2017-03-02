@@ -1,13 +1,5 @@
-QB.init(QBApp.appId, QBApp.authKey, QBApp.authSecret);
-  // First of all create a session and obtain a session token
-  // Then you will be able to run requests to Users
-  //
-  QB.createSession(function(err,result){
-    console.log('Session create callback', err, result);
-  });
+QB.init(QBApp.appId, QBApp.authKey, QBApp.authSecret, true);
 
-
-console.log('Session opening ');
 // Create session
 	var filter = {sort_asc: 'created_at'};
 QB.createSession(QBUser, function(err, result){
@@ -34,9 +26,8 @@ QB.createSession(QBUser, function(err, result){
 	}
 });
 
-
 function getAllPosts() {
-	QB.data.list("Application", filter, function(err, result){
+	QB.data.list("Movie", filter, function(err, result){
 		if (err) { 
 			console.log(err);
 		} else {
@@ -51,7 +42,7 @@ function getAllPosts() {
 }
 
 function addNewPost(textTitle, textBody) {
-	QB.data.create("Application", {name: textTitle, description: textBody}, function(err, res){
+	QB.data.create("Movie", {name: textTitle, description: textBody}, function(err, res){
 		if (err) {
 			console.log(err);
 		} else {
@@ -62,7 +53,7 @@ function addNewPost(textTitle, textBody) {
 			$('#title_post').val('');
 			$('#body_post').val('');
 
-			QB.data.list("Application", filter, function(err, result){
+			QB.data.list("Movie", filter, function(err, result){
 				if (err) { 
 					console.log(err);
 				} else {

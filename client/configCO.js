@@ -10,5 +10,3 @@ var QBUser = {
 	login: "rob@gmail.com",   
 	password: "12345678" 
 };
-
-
