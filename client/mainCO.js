@@ -1,8 +1,22 @@
-QB.init(QBApp.appId, QBApp.authKey, QBApp.authSecret, true);
+QB.init(QBApp.appId, QBApp.authKey, QBApp.authSecret); 
+var sessionToken; //'7dda331c55fb52747a2794c4cd5f39d6de00cb1a';
+var appId;
 
-// Create session
-	var filter = {sort_asc: 'created_at'};
-QB.createSession(QBUser, function(err, result){
+QB.createSession(function(err,result){
+    console.log('Session create callback', err, result);
+  });  // First of all create a session and obtain a session token
+  // Then you will be able to run requests to User
+sessionToken = '7dda331c55fb52747a2794c4cd5f39d6de00cb1a';
+appId = appId;
+  
+   
+QB.init(sessionToken, QBApp.appId);
+
+
+
+var params = {login: 'rob@gmail.com', password: '12345678'};
+
+QB.login(params, function(err, result) {
 	if (err) {
 		console.log('Something went wrong: ' + err);
 	} else {
@@ -26,8 +40,10 @@ QB.createSession(QBUser, function(err, result){
 	}
 });
 
+	var filter = {sort_asc: 'created_at'};
+
 function getAllPosts() {
-	QB.data.list("Movie", filter, function(err, result){
+	QB.data.list("Application", filter, function(err, result){
 		if (err) { 
 			console.log(err);
 		} else {
@@ -35,14 +51,14 @@ function getAllPosts() {
 
 			for (var i=0; i < result.items.length; i++) {
 				var item = result.items[result.items.length-i-1];
-				showPost(item.name, item.description, false);
+				showPost(item.FullName, item.email, false);
 			}	
 		}
 	});
 }
 
 function addNewPost(textTitle, textBody) {
-	QB.data.create("Movie", {name: textTitle, description: textBody}, function(err, res){
+	QB.data.create("Application", {name: textTitle, description: textBody}, function(err, res){
 		if (err) {
 			console.log(err);
 		} else {
@@ -53,7 +69,7 @@ function addNewPost(textTitle, textBody) {
 			$('#title_post').val('');
 			$('#body_post').val('');
 
-			QB.data.list("Movie", filter, function(err, result){
+			QB.data.list("Application", filter, function(err, result){
 				if (err) { 
 					console.log(err);
 				} else {
