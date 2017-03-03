@@ -3,65 +3,30 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <title>Robby's Resolutions</title>
- <link rel="shortcut icon" href="https://quickblox.com/favicon.ico">
-  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.4/css/bootstrap.min.css">
-  <link href="https://fonts.googleapis.com/css?family=Lato" rel="stylesheet">
-  <link rel="stylesheet" type="text/css" href="css/style.css">
+  <link rel="stylesheet" type="text/css" href="css/login.css">
 </head>
-<body>
-  <div class="container">
-    <h1>Robby’s Resolutions</h1>
-    <p class="tagline">Hosted on Heroku for the work to see</p>
-    <div class="nav">
-    <a class="navItem" href="index.html">Resolutions</a>
-      <a class="navItem" href="about.html">JetLoan</a>
-      <a class="navItem" href="contact.html">QB Database</a>
-      <a class="navItem" href="contactQM.html">Q-municate</a>
-    </div>
-    <div class="columns">
-      <div class="main">
-        <div class="post">
-          <h2>Learn surfing</h2>
-          <img src="images/surfing.jpg" alt="Surfing">
-          <p class="resolution">I’ve wanted to learn surfing for a while now. And I don’t even remember the last time I took a vacation. So, it’s about time: I will take a vacation and learn surfing this month</p>
-          <p class="byline">My March Resolution by Robby KK</p>
-        </div>
-        <div class="post">
-          <h2>Read a book</h2>
-          <img src="images/book.jpg" alt="Book">
-          <p class="resolution">I don’t know why, but it has been a while since I last read a book. I’ll take a look at the best sellers and choose the first one that piques my interest. This month I will read a book.</p>
-          <p class="byline">My February Resolution by Robby K</p>
-        </div>
-        <div class="post">
-          <h2>Meditate every day</h2>
-          <img src="images/meditating.jpg" alt="Meditating">
-          <p class="resolution">Honestly, it’s January and I’m already stressed out! I’ve been thinking about meditating for a while now. This month I will take meditation classes and make time to meditate at least 10 minutes every day.</p>
-          <p class="byline">My January Resolution by Robby K</p>
-        </div>
-      </div>
-      <div class="sidebar">
-        <div class="widget">
-          <div class="profilecontainer">
-            <img class="profile" src="images/john-doe.jpg" alt="John Doe">
-            <h3>Robby</h3>
-          </div>
-        </div>
-        <div class="widget">
-          <h3>Follow Me</h3>
-          <ul>
-            <li><a href="https://twitter.com/johndoe/" target="_blank">Twitter</a></li>
-            <li><a href="https://www.instagram.com/johndoe/" target="_blank">Instagram</a></li>
-            <li><a href="https://www.facebook.com/johndoe/" target="_blank">Facebook</a></li>
-          </ul>
-        </div>
-        <div class="widget">
-          <h3>Quote of the Month</h3>
-          <p class="blockquote">“We are what we repeatedly do. Excellence, then, is not an act, but a habit.”<br> - Aristotle</p>
-        </div>
-      </div>
-    </div>
-    <p class="footer">&copy; 2016 by <a href="mailto:robby.klouda@quinnipiac.edu" target="_blank">Robby K</a></p>
+<form action="login.js">
+    <div class="login-page">
+  <div class="form">
+
+    <form class="login-form">
+       <input type="text" class="form-control" id="usr_sgn_p_lgn" placeholder="Enter login">
+ <input type="password" class="form-control" id="usr_sgn_p_pwd" placeholder="Enter password">
+      <button id="login">Login</button>
+
+    </form>
   </div>
+</div>
+</form>
+
+<!--  <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.1/jquery.min.js"></script> -->
+
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/2.1.4/jquery.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/quickblox/2.4.0/quickblox.min.js"></script>
+  <script src="https://cdn.digits.com/1/sdk.js" id="digits-sdk" async></script><!-- TWITTER_DIGITS SDK -->
+<!--  <script src="../../quickblox.min.js"></script> -->
+ <script src="config.js"></script>
+ <script src="login.js"></script>
+ 
 </body>
 </html>

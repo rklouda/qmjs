@@ -40,6 +40,12 @@ QB.login(params, function(err, result) {
 	}
 });
 
+
+
+
+
+
+
 	var filter = {sort_asc: 'created_at'};
 
 function getAllPosts() {
@@ -58,7 +64,7 @@ function getAllPosts() {
 }
 
 function addNewPost(textTitle, textBody) {
-	QB.data.create("Application", {name: textTitle, description: textBody}, function(err, res){
+	QB.data.create("Application", {FullName: textTitle, email: textBody}, function(err, res){
 		if (err) {
 			console.log(err);
 		} else {

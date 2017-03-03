@@ -93,7 +93,7 @@ $(document).ready(function() {
       $("html, body").animate({ scrollTop: 0 }, "slow");
     });
   });
-
+/*
   // Login user with social provider
   //
   $('#sign_in_social').on('click', function() {
@@ -116,7 +116,7 @@ $(document).ready(function() {
       $("html, body").animate({ scrollTop: 0 }, "slow");
     });
   });
-
+*/
   // Logout user
   //
   $('#sign_out').on('click', function() {
@@ -232,7 +232,7 @@ $(document).ready(function() {
       });
     }
   });
-
+/*
   // Update user
   //
   $('#update').on('click', function() {
@@ -284,7 +284,7 @@ $(document).ready(function() {
       $("html, body").animate({ scrollTop: 0 }, "slow");
     });
   });
-
+*/
   // Reset email
   //
   $('#reset').on('click', function() {
