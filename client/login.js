@@ -32,7 +32,7 @@ QB.init(sessionToken, QBApp.appId);
 		console.log('Session created with id ' + result.id);
 		// Get all posts
 		getAllPosts();
-	    window.location.href = 'https://fast-dusk-28940.herokuapp.com/start.html';
+	  window.location = 'start.html';
 	}
     });
   });
