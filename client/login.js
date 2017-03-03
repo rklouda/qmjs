@@ -32,7 +32,7 @@ QB.init(sessionToken, QBApp.appId);
 		console.log('Session created with id ' + result.id);
 		// Get all posts
 		getAllPosts();
-		window.location.href = 'start.html';
+	    location.href = 'start.html';
 	}
     });
   });
