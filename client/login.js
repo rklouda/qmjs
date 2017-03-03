@@ -32,7 +32,7 @@ QB.init(sessionToken, QBApp.appId);
 		console.log('Session created with id ' + result.id);
 		// Get all posts
 		getAllPosts();
-	  window.location = 'start.html';
+	 
 	}
     });
   });
@@ -47,9 +47,10 @@ QB.init(sessionToken, QBApp.appId);
 				for (var i=0; i < result.items.length; i++) {
 				var item = result.items[result.items.length-i-1];
 				console.log("Items" + item.FullName);
-				  
 				}
+				 
 			}	
+			window.open('start.html'); 
 	});
 }
   
