@@ -1,26 +1,34 @@
-QB.init(QBApp.appId, QBApp.authKey, QBApp.authSecret); 
-var sessionToken; //'7dda331c55fb52747a2794c4cd5f39d6de00cb1a';
-var appId;
 
-QB.createSession(function(err,result){
+QB.init(QBApp.appId, QBApp.authKey, QBApp.authSecret); 
+//'7dda331c55fb52747a2794c4cd5f39d6de00cb1a';
+$(document).ready(function() {
+
+  QB.createSession(function(err,result){
     console.log('Session create callback', err, result);
-  });  // First of all create a session and obtain a session token
+  });
+  // First of all create a session and obtain a session token
   // Then you will be able to run requests to User
-sessionToken = '7dda331c55fb52747a2794c4cd5f39d6de00cb1a';
-appId = appId;
-  
-   
+//console.log('Session created with token ' + sessionToken);
+var sessionToken = '058205f55f1b03ac808fa89535fad662b400cb1a';
 QB.init(sessionToken, QBApp.appId);
 
+//var params = {login: 'rob@gmail.co', password: '12345678'};
+//var params = {login: 'rob@gmail.com', password: '12345678'};
 
+  // Login user
+  //
+  $('#sign_in').on('click', function() {
+    var login = $('#username').val();
+    var password = $('#password').val();
+    console.log('name: ' + login);
+    
+    var params = { 'login': login, 'password': password};
 
-var params = {login: 'rob@gmail.com', password: '12345678'};
-
-QB.login(params, function(err, result) {
+    QB.login(params, function(err, user){
 	if (err) {
 		console.log('Something went wrong: ' + err);
 	} else {
-		console.log('Session created with id ' + result.id);
+		console.log('Session created with id ' + user.id);
 		// Get all posts
 		getAllPosts();
 		
@@ -39,12 +47,7 @@ QB.login(params, function(err, result) {
 		});
 	}
 });
-
-
-
-
-
-
+});
 
 	var filter = {sort_asc: 'created_at'};
 
@@ -102,3 +105,4 @@ function showPost(textTitle, textBody, lastPost) {
 		containerElement.append(postElement);
 	}		
 }
+});

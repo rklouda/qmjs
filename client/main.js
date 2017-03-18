@@ -14,8 +14,8 @@ $(document).ready(function() {
   // Init Twitter Digits
   //
 
-  var digitsKey = 'uH2aUsd3BP0qLpTezVnqXyZAk';
-
+//  var digitsKey = 'uH2aUsd3BP0qLpTezVnqXyZAk';
+/*
   $('#digits-sdk').load(function () {
     Digits.init({ consumerKey: digitsKey })
       .done(function() {
@@ -50,7 +50,7 @@ $(document).ready(function() {
         });
     });
   });
-
+*/
   // Create user
   //
   $('#sign_up').on('click', function() {
@@ -84,6 +84,7 @@ $(document).ready(function() {
     QB.login(params, function(err, user){
       if (user) {
         $('#output_place').val(JSON.stringify(user));
+        
       } else  {
         $('#output_place').val(JSON.stringify(err));
       }
